@@ -9,7 +9,7 @@ class ThemeToggle extends StatefulWidget {
 }
 
 class _ThemeToggleState extends State<ThemeToggle> {
-  bool firstSwitchValue = false;
+  static bool firstSwitchValue = false;
 
   @override
   Widget build(BuildContext context) {
