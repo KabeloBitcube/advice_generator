@@ -38,7 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   Center(
                     child: Text(
-                      'Login to your account',
+                      'Sign in to your account',
                       style: TextStyle(
                         color: const Color.fromARGB(255, 0, 38, 66),
                         fontSize: 15,

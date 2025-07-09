@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: Text('Advice Generator'), centerTitle: true),
       drawer: Drawer(
         child: FloatingActionButton(
-          onPressed: () => context.go('/'),
+          onPressed: () => context.go('/login'),
           child: Text('Sign Out'),
         ),
       ),
