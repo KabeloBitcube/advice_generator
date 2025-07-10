@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Hi,', style: TextStyle(fontSize: 20,),),
+                      Text('Hi,', style: TextStyle(fontSize: 20)),
                       Row(
                         children: [
                           Text(
@@ -47,8 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 20,),
-                          Icon(Icons.hail_rounded)
+                          SizedBox(width: 20),
+                          Icon(Icons.hail_rounded),
                         ],
                       ),
                     ],
@@ -107,55 +107,60 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 0, 38, 66),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Click To Generate Advice',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: -50,
-                    left: 160,
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            spreadRadius: 3,
-                            blurRadius: 2,
-                            offset: Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: IconButton(
-                          onPressed: () {
-                            context.read<AdviceBloc>().add(GetAdviceEvent());
-                          },
-                          icon: Icon(
-                            Icons.restart_alt,
-                            size: 50,
-                            color: const Color.fromARGB(255, 0, 38, 66),
+                    clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 0, 38, 66),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Click To Generate Advice',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                ],
-              ),
+                      Positioned(
+                        top: -50,
+                        left: 160,
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26,
+                                spreadRadius: 3,
+                                blurRadius: 2,
+                                offset: Offset(0, 5),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {
+                                context.read<AdviceBloc>().add(
+                                  GetAdviceEvent(),
+                                );
+                              },
+                              icon: Icon(
+                                Icons.restart_alt,
+                                size: 50,
+                                color: const Color.fromARGB(255, 0, 38, 66),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                  .animate()
+                  .fadeIn(duration: 200.ms)
+                  .slideX(begin: 0.2, duration: 1000.ms, curve: Curves.easeOut),
             ],
           ),
         ),
