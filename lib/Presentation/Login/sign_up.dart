@@ -19,6 +19,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   final passwordController = TextEditingController();
 
+  final confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,6 +102,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please enter your email address";
+                              } else if (!value.contains('@')) {
+                                return "Email must contain @ symbol";
                               }
                               return null;
                             },
@@ -122,6 +126,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please enter your password";
+                              } else if (value.length < 5) {
+                                return "Password needs to be at least 5 characters";
                               }
                               return null;
                             },
@@ -139,10 +145,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: TextFormField(
+                            controller: confirmPasswordController,
                             obscureText: true,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please confirm your password";
+                              } else if (value.length < 4) {
+                                return "Password needs to be at least 5 characters";
+                              } else if (value != passwordController.text) {
+                                return "Passwords must match";
                               }
                               return null;
                             },

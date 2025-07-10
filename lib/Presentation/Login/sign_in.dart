@@ -102,6 +102,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please enter your password";
+                              } else if (value.length < 5) {
+                                return "Password needs to be at least 5 characters";
                               }
                               return null;
                             },
