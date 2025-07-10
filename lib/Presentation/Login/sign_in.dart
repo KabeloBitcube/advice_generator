@@ -95,6 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: TextFormField(
+                            obscureText: true,
                             controller: passwordController,
                             validator: (value) {
                               if (value!.isEmpty) {

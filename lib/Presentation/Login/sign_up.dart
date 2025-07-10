@@ -115,6 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: TextFormField(
+                            obscureText: true,
                             controller: passwordController,
                             validator: (value) {
                               if (value!.isEmpty) {
@@ -136,6 +137,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Padding(
                           padding: const EdgeInsets.all(10),
                           child: TextFormField(
+                            obscureText: true,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please confirm your password";
