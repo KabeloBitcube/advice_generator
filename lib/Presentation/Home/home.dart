@@ -1,4 +1,5 @@
 import 'package:advice_generator/Presentation/Bloc/advice_bloc.dart';
+import 'package:advice_generator/Presentation/Home/AnimatedWidget/animated_widget.dart';
 import 'package:advice_generator/Presentation/Provider/username.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -125,36 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Positioned(
                         top: -50,
                         left: 160,
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black26,
-                                spreadRadius: 3,
-                                blurRadius: 2,
-                                offset: Offset(0, 5),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: IconButton(
-                              onPressed: () {
-                                context.read<AdviceBloc>().add(
-                                  GetAdviceEvent(),
-                                );
-                              },
-                              icon: Icon(
-                                Icons.restart_alt,
-                                size: 50,
-                                color: const Color.fromARGB(255, 0, 38, 66),
-                              ),
-                            ),
-                          ),
-                        ),
+                        child: AnimatedGenerator()
                       ),
                     ],
                   )
