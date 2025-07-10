@@ -1,4 +1,6 @@
+import 'package:advice_generator/Presentation/Provider/username.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -117,7 +119,12 @@ class _SignInScreenState extends State<SignInScreen> {
                         GestureDetector(
                           onTap: () => {
                             if (formKey.currentState!.validate())
-                              {context.push('/home')},
+                              {
+                                context.push('/home'),
+                                context.read<UsernameProvider>().getUserName(
+                                  usernameController.text,
+                                ),
+                              },
                           },
                           child: Container(
                             height: 50,
