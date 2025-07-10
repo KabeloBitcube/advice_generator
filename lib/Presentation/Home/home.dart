@@ -100,7 +100,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             curve: Curves.easeOut,
                           );
                     } else if (state is AdviceError) {
-                      return Center(child: Text(state.message));
+                      return Center(child: Image(image: AssetImage('assets/error.avif'))).animate()
+                          .fadeIn(duration: 200.ms)
+                          .slideX(
+                            begin: 0.2,
+                            duration: 1000.ms,
+                            curve: Curves.easeOut,
+                          );
                     }
 
                     return SizedBox.shrink();
