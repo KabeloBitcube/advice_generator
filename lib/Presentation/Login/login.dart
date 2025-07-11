@@ -30,7 +30,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 0, 38, 66),
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50),
+                        ),
                       ),
                       child: Column(
                         children: [
