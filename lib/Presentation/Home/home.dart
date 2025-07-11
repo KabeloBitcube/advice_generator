@@ -100,7 +100,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             curve: Curves.easeOut,
                           );
                     } else if (state is AdviceError) {
-                      return Center(child: Image(image: AssetImage('assets/error.avif'))).animate()
+                      return Center(
+                            child: Image(
+                              image: AssetImage('assets/error.avif'),
+                            ),
+                          )
+                          .animate()
                           .fadeIn(duration: 200.ms)
                           .slideX(
                             begin: 0.2,
@@ -120,7 +125,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: MediaQuery.of(context).size.height * 0.3,
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 0, 38, 66),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
                         ),
                         child: Center(
                           child: Text(
@@ -132,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Positioned(
                         top: -50,
                         left: 160,
-                        child: AnimatedGenerator()
+                        child: AnimatedGenerator(),
                       ),
                     ],
                   )
