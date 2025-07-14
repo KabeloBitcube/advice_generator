@@ -3,6 +3,7 @@ import 'package:bloc/bloc.dart';
 
 import 'package:advice_generator/Domain/Entity/advice.dart';
 import 'package:advice_generator/Domain/UseCase/usecase.dart';
+import 'package:equatable/equatable.dart';
 
 part 'advice_event.dart';
 part 'advice_state.dart';
